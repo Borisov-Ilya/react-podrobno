@@ -4,10 +4,19 @@ import './App.css';
 export const App = () => {
   return (
     <div className="App">
-      This is APP component
+      <AppTitle/>
       <Rating/>
       <Accordion/>
+      <Rating/>
     </div>
+  )
+}
+
+function AppTitle() {
+  return (
+    <>
+      This is APP component
+    </>
   )
 }
 
