@@ -1,52 +1,32 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
+import './App.css'
+import {Accordion} from './components/Accordion/Accordion'
+import {Rating} from './components/Rating/Rating'
 
 export const App = () => {
-  return (
-    <div className="App">
-      <AppTitle/>
-      <Rating/>
-      <Accordion/>
-      <Rating/>
-    </div>
-  )
+    return (
+        <div className="App">
+            <Accordion titleValue={'Menu'} collapsed={true}/>
+            <Accordion titleValue={'Users'} collapsed={false}/>
+
+            <Rating value={1}/>
+            <Rating value={2}/>
+            <Rating value={3}/>
+            <Rating value={4}/>
+            <Rating value={5}/>
+        </div>
+    )
 }
 
-function AppTitle() {
-  return (
-    <>
-      This is APP component
-    </>
-  )
+type PageTitlePropsType = {
+    title: string
 }
 
-function Star() {
-  return (
-    <div>star</div>
-  )
+function PageTitle(props: PageTitlePropsType) {
+    return (
+        <h1>
+            {props.title}
+        </h1>
+    )
 }
 
-function Rating() {
-  return (
-    <div>
-      <Star/>
-      <Star/>
-      <Star/>
-      <Star/>
-      <Star/>
-    </div>
-  )
-}
-
-function Accordion() {
-  return (
-    <div>
-      <h3>Меню</h3>
-      <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-      </ul>
-    </div>
-  )
-}
